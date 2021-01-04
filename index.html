@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+	<style>
+		
+		.button {
+			position: center;
+			width: 7000px;
+			max-width: 95%;
+			height: 650px;
+			background-color: #6B8E23;
+			font-family: 'Roboto Condensed', sans-serif;
+			font-size: 100px;
+			text-align: center;
+			border-radius: 27px;
+			margin: 25px;
+		}
+	</style>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap" rel="stylesheet">
+<body>
+
+    <button type="button" class="button" id="state" onclick="goHigh()">GATE</button>
+    <!-- <button type="button" class="button" id="state" onclick="goHigh()">GARAGE</button>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <script>
+        var socket = io.connect(); //load socket.io-client and connect to the host
+        
+	window.onload = goLow;
+
+	function goHigh() {
+        	socket.emit("state", 0); //send button state to server
+		setTimeout(goLow, 1500);
+        }
+
+        function goLow() {
+            socket.emit("state", 1); //send button state to server
+        }
+	
+
+    </script>
+
+</html>
+</body>
+
+</html>
