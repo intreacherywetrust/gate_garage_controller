@@ -11,3 +11,4 @@ The next step is to add a garage door button and state control.
 ## Planned:
 - Implement garage door button
 - Implement reed switch and display status of both the gate and the garage door to the UI
+- REST API 
